@@ -1,0 +1,68 @@
+// Media Query Mixins
+//Widescreens
+@include mediaXl() {
+    .projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+//Desktops and Laptops
+@include mediaLg() {
+
+    .projects,
+    .boxes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+//Tablets ans Small Laptops
+@include mediaMd() {
+    main {
+        align-items: center;
+        text-align: center;
+
+        .lg-heading {
+            line-height: 1;
+            margin-bottom: 1rem;
+
+
+        }
+
+    }
+
+    .lg-heading {
+        @at-root {
+            h1#{&} {
+                font-size: 35px !important;
+            }
+        }
+    }
+
+    .about-info {
+        grid-template-areas:
+            'bioimage'
+            'bio'
+            'job1'
+            'job2'
+            'job3';
+
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .boxes {
+        grid-template-columns: 1fr;
+    }
+}
+
+//Smartphones
+@include mediaSm() {
+
+    .projects,
+    .boxes {
+        grid-template-columns: 1fr;
+    }
+}
